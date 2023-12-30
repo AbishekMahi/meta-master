@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.og_preview_container {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    max-width: 500px;
+    border: 1px solid #dddfe2;
+    background: #FFF;
+    border-radius: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+}
+
+.og_preview_container .og_preview_author {
+    padding: 12px;
+    position: relative;
+}
+
+.og_preview_container .og_preview_author img {
+    height: 40px;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
+
+.og_preview_container .og_preview_author .og_preview_author_details {
+    position: absolute;
+    top: 0;
+    left: 58px;
+    font-size: 14px;
+    line-height: 1.38em;
+    padding-top: 13px;
+}
+
+.og_preview_container .og_preview_author .og_preview_author_details .author_name {
+    color: #385898;
+    font-weight: 600;
+}
+
+.og_preview_container .og_preview_author .og_preview_author_details .author_time,
+.og_preview_container .og_preview_author .og_preview_author_details .author_handle {
+    color: #616770;
+    font-size: 12px;
+}
+
+.level.is-mobile {
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    font-size: 13px;
+    color: #606770;
+    box-sizing: inherit;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.level.is-mobile .level-left,
+.level.is-mobile .level-right {
+    display: flex;
+}
+
+.level.is-mobile .level-left+.level-right {
+    margin-top: 0;
+}
+
+.level.is-mobile .level-left,
+.level.is-mobile .level-right {
+    display: flex;
+}
+
+.level {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.level-item {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.og_preview_container .og_preview_author .og_preview_author_details .author_time .level-item,
+.og_preview_container .og_preview_author .og_preview_author_details .author_handle .level-item {
+    margin: 0;
+}
+
+.og_preview_container .og_preview_author .og_preview_author_details .author_time i.globe,
+.og_preview_container .og_preview_author .og_preview_author_details .author_handle i.globe {
+    background-image: url("/images/friends_icon.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    display: block;
+    width: 12px;
+    height: 12px;
+    opacity: 0.5;
+}
+
+.og_preview_container .og_preview_comment {
+    font-size: 14px;
+    line-height: 1.38em;
+    padding: 12px;
+    padding-top: 0;
+    margin-top: -5px;
+}
+
+.og_preview_container .og_preview_the_image {
+    padding-top: calc(630 / 1200 * 100%);
+    background-color: #eee;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-top: 1px solid #dddfe2;
+}
+
+.og_preview_container .og_preview_link_details {
+    background: #f2f3f5;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #dddfe2;
+    padding: 12px;
+    padding-bottom: 8px;
+}
+
+.og_preview_container .og_preview_link_details .details_domain {
+    color: #606770;
+    font-size: 12px;
+    line-height: 11px;
+    text-transform: uppercase;
+}
+
+
+.og_preview_container .og_preview_link_details .details_title {
+    color: #1d2129;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.og_preview_container .og_preview_link_details .details_description {
+    color: #606770;
+    font-size: 13px;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    white-space: nowrap;
+    margin-top: 1px;
+}
+
+.og_preview_container .og_preview_likes {
+    font-size: 13px;
+    color: #606770;
+    padding: 11px;
+}
+
+.og_preview_container .og_preview_likes .level-item {
+    margin: 0;
+}
+
+.og_preview_container .og_preview_likes i.like {
+    background-image: url("/images/fblike.svg");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container {
+    border-radius: 0;
+    max-width: 530px;
+    zoom: 0.91;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_author {
+    padding: 15px;
+    position: relative;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_author img {
+    height: 49px;
+    border: none;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_author .og_preview_author_details {
+    left: 73px;
+    padding-top: 19px;
+    font-size: 15px;
+    line-height: 1.33em;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_author .og_preview_author_details .author_name {
+    font-size: 15px;
+    color: #14171a;
+    font-weight: 700;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_author .og_preview_author_details .author_handle {
+    font-size: 15px;
+    color: #657786;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .og_preview_comment {
+    font-size: 21px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container {
+    border: 1px solid #ccd6dd;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container .og_preview_the_image {
+    border: none;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container .og_preview_link_details {
+    background: #fff;
+    border-top: 1px solid #ccd6dd;
+    border-bottom: none;
+    padding: 15px;
+    padding-top: 12px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container .og_preview_link_details .details_domain {
+    color: #657786;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container .og_preview_link_details .details_title {
+    color: #14171a;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_card_preview_container .og_preview_link_details .details_description {
+    font-size: 15px;
+    color: #657786;
+    line-height: 20px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_date {
+    color: #657786;
+    font-size: 15px;
+    margin: 15px 0 0 15px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_activity {
+    margin: 15px;
+    border-top: 1px solid #e6ecf0;
+    padding-top: 15px;
+}
+
+.tools_twitter-card-preview-tool .og_preview_container .twitter_activity span {
+    color: #657786;
+}
