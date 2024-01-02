@@ -2,36 +2,18 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "getMetaDetails") {
         const metaDetails = {
-            title: document.title || "-- no title --",
-            siteName: getSiteName(window.location.hostname),
-            description: getMetaContent('meta[name="description"]') || "-- no description --",
+            siteName: getMetaContent('meta[property="og:site_name"]') || getSiteName(window.location.hostname),
+            title: getMetaContent('meta[property="og:title"]') || getMetaContent('meta[name="twitter:title"]') || document.title || "-- Title is missing! --",
+            description: getMetaContent('meta[property = "og:description"]') || getMetaContent('meta[name="description"]') || "-- Description is missing! --",
             keywords: getMetaContent('meta[name="keywords"]'),
             image: getWebPCompatibleImage() || 'images/no-image.png',
             favicon: getFavicon() || 'images/no-favicon.png',
-            canonicalUrl: getMetaContent('link[rel="canonical"]') || getMetaContent('meta[property="og:url"]') || window.location.href,
+            canonicalUrl: getMetaContent('link[rel="canonical"]') || getMetaContent('meta[property="og:url"]') || getMetaContent('meta[name="twitter:url"]') || window.location.href,
+            themeColor: getMetaContent("meta[name='theme-color']")
         };
-
         sendResponse(metaDetails);
     }
 });
-
-// function getSiteName(hostname) {
-//     // Extract the site name from the hostname (e.g., "lynkify.in" from "https://lynkify.in/posts/how-to-create-smart-links/")
-//     return hostname.split('.').slice(-2).join('.');
-// }
-
-// function getSiteName(hostname) {
-//     let siteName = hostname;
-//     if (hostname.includes("www.")) {
-//         siteName = siteName.slice(4); // Remove "www."
-//     }
-//     const domainParts = siteName.split(".");
-//     if (domainParts.length > 2) {
-//         // Handle subdomains (e.g., "blog.lynkify.in")
-//         siteName = `${domainParts[0]}.${domainParts[1]}`;
-//     }
-//     return siteName;
-// }
 
 function getSiteName(hostname) {
     let siteName = hostname;
@@ -53,11 +35,6 @@ function getMetaContent(selector) {
     const metaTag = document.querySelector(selector);
     return metaTag ? metaTag.content : "";
 }
-
-// function getMetaContent(selector) {
-//     const metaTag = document.querySelector(selector);
-//     return metaTag ? metaTag.textContent.trim() : "";
-// }
 
 function getWebPCompatibleImage() {
     const ogImageTag = document.querySelector('meta[property="og:image"]') || document.querySelector('meta[name="twitter:image"]');
@@ -82,7 +59,6 @@ function makeAbsoluteUrl(relativeUrl) {
     return absoluteUrl.href;
 }
 
-
 function getFavicon() {
     const faviconTag = document.querySelector('link[rel="icon"]') || document.querySelector('link[rel="shortcut icon"]');
 
@@ -91,7 +67,7 @@ function getFavicon() {
     } else {
         // If no explicit favicon link is found, construct the URL
         const baseHref = document.querySelector('base') ? document.querySelector('base').href : window.location.origin;
-        const constructedFaviconUrl = baseHref + '/favicon.ico';
+        const constructedFaviconUrl = baseHref + '/favicon.ico' || baseHref + '/favicon.png';
 
         // Check if the constructed favicon URL exists
         return faviconExists(constructedFaviconUrl) ? constructedFaviconUrl : "images/no-favicon.png";

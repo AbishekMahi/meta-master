@@ -48,8 +48,9 @@ function displayMetaDetails(metaDetails) {
             </div>
         </div>
         <h4> ${title}</h4>
-        <p>${description}</p>
+        <p>${description.length > 160 ? description.substring(0, 160) + '...' : description}</p>
         <img src="${image}" class="image" alt="${image}">
+        <small class="bottom-small">Google Preview</small>
       `;
 
         //   facebook preview
@@ -90,6 +91,7 @@ function displayMetaDetails(metaDetails) {
             </div>
         </div>
     </div>
+    <small class="bottom-small">Facebook Preview</small>
        `;
         //   X preview
         xPreview.innerHTML = `
@@ -112,6 +114,7 @@ function displayMetaDetails(metaDetails) {
             </div>
             <div class="twitter_date">2:36 PM · Jul 23, 2020</div>
         </div>
+        <small class="bottom-small">X (formerly Twitter) Preview</small>
           `;
 
         // Linkedin preview
@@ -120,13 +123,13 @@ function displayMetaDetails(metaDetails) {
         <div class="x_author px-2">
         <img class="linked-author" src="https://blog.lynkify.in/img/avatar/abishek.jpg">
         <div class="linked_author_details">
-            <div class="author_name">Abishek Mahi (He/Him)</div>
+            <div class="author_name">Abishek Mahi <span>(He/Him) • You</span></div>
             <div class="author_bio">Freelancer - Web Developer - UI/UX designer</div>
             <div class="author_bio">5mo</div>
         </div>
         </div>
         <div class="linked_comment px-2">The sample text</div>
-        <img src="${image}" class="linked-img" alt="${image}">
+        <div class="x_the_image"style="background-image: url(&quot;${image}&quot;);"></div>
         <div class="linked-img" style="background-image: url(&quot;${image}&quot;);">
         </div>
         <div class="linked_details p-3">
@@ -143,6 +146,7 @@ function displayMetaDetails(metaDetails) {
                 </div>
             </div>
        </div>
+       <small class="bottom-small">Linkedin Preview</small>
        `;
         // discord Preview
         discordPreview.innerHTML = `
@@ -151,6 +155,7 @@ function displayMetaDetails(metaDetails) {
          <p>${description}</p>
          <img src="${image}" alt="${image}">
          </div>
+        <small class="bottom-small">Discord Preview</small>
         `;
     } else {
         googlePreview.innerHTML = "Unable to retrieve meta details.";

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
     <title>Meta Viewer By Lynkify</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
     <!-- css  -->
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -16,87 +17,95 @@
 
 <body>
     <header>
-        <h2>Meta Viewer <small> By Lynkify</small></h2>
+        <h2>Meta Master <small> By Lynkify</small></h2>
     </header>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#previews" type="button" role="tab"
-                aria-controls="home" aria-selected="true">Previews</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#analayse" type="button" role="tab"
-                aria-controls="profile" aria-selected="false">Analayse</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
-                aria-controls="contact" aria-selected="false">More</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="previews" role="tabpanel" aria-labelledby="home-tab">.
-            <div class="d-flex align-items-start">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-google" role="tabpanel">
-                        <div class="contents">
-                            <!-- google content here -->
-                            <div id="google-preview"></div>
+    <main>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#previews" type="button" role="tab"
+                    title="Social share previews" aria-controls="home" aria-selected="true">Previews</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#analayse" type="button" role="tab"
+                    title="Analayse" aria-controls="profile" aria-selected="false">Analayse</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" title="More"
+                        aria-controls="contact" aria-selected="false">More</button>
+                </li> -->
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="previews" role="tabpanel" aria-labelledby="home-tab">.
+                <div class="d-flex align-items-start">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-google" role="tabpanel">
+                            <div class="contents">
+                                <!-- google content here -->
+                                <div id="google-preview"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-fb" role="tabpanel">
+                            <div class="contents">
+                                <!-- fb content here -->
+                                <div id="fb-preview"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-twitter" role="tabpanel">
+                            <div class="contents">
+                                <!-- X content here -->
+                                <div id="x-preview"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-linkedin" role="tabpanel">
+                            <div class="contents">
+                                <!-- Linkedin content here -->
+                                <div id="linkedin-preview"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-discord" role="tabpanel">
+                            <div class="contents">
+                                <!-- Discord content here -->
+                                <div id="discord-preview"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-fb" role="tabpanel">
-                        <div class="contents">
-                            <!-- fb content here -->
-                            <div id="fb-preview"></div>
-                        </div>
+                    <div class="nav flex-column nav-pills my-3 mx-2 right" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <p>Preview</p>
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#v-pills-google"
+                            type="button" title="Preview of Google" aria-selected="true">
+                            <span><i class='bx bxl-google bx-sm'></i></span></button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-fb" type="button"
+                            title="Preview of Facebook" aria-selected="false">
+                            <span><i class='bx bxl-facebook bx-sm'></i></span></button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-twitter" type="button"
+                            title="Preview of Twitter" aria-selected="false">
+                            <span><i class='bx bxl-twitter bx-sm'></i></span></button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-linkedin" type="button"
+                            title="Preview of LinkedIn" aria-selected="false">
+                            <span><i class='bx bxl-linkedin bx-sm'></i></span></button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-discord" type="button"
+                            title="Preview of Discord" aria-selected="false">
+                            <span><i class='bx bxl-discord-alt bx-sm'></i></span></button>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-twitter" role="tabpanel">
-                        <div class="contents">
-                            <!-- X content here -->
-                            <div id="x-preview"></div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-linkedin" role="tabpanel">
-                        <div class="contents">
-                            <!-- Linkedin content here -->
-                            <div id="linkedin-preview"></div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-discord" role="tabpanel">
-                        <div class="contents">
-                            <!-- Discord content here -->
-                            <div id="discord-preview"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav flex-column nav-pills my-3 mx-2 right" id="v-pills-tab" role="tablist"
-                    aria-orientation="vertical">
-                    <p>Preview</p>
-                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#v-pills-google" type="button"
-                        title="Preview of Google" aria-selected="true">
-                        <span><i class='bx bxl-google bx-sm'></i></span></button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-fb" type="button"
-                        title="Preview of Facebook" aria-selected="false">
-                        <span><i class='bx bxl-facebook bx-sm'></i></span></button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-twitter" type="button"
-                        title="Preview of Twitter" aria-selected="false">
-                        <span><i class='bx bxl-twitter bx-sm'></i></span></button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-linkedin" type="button"
-                        title="Preview of LinkedIn" aria-selected="false">
-                        <span><i class='bx bxl-linkedin bx-sm'></i></span></button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-discord" type="button"
-                        title="Preview of Discord" aria-selected="false">
-                        <span><i class='bx bxl-discord-alt bx-sm'></i></span></button>
                 </div>
             </div>
+            <div class="tab-pane fade" id="analayse" role="tabpanel" aria-labelledby="profile-tab">
+                <center>
+                    <h1></h1>
+                </center>
+                <center>
+                    <h2>New Features are Coming...</h2>
+                </center>
+                <center>
+                    <p>Stay tuned</p>
+                </center>
+            </div>
+            <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+            </div> -->
         </div>
-        <div class="tab-pane fade" id="analayse" role="tabpanel" aria-labelledby="profile-tab">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet temporibus adipisci tempore non dolorum enim
-            inventore fuga odio, explicabo possimus rerum quibusdam quos exercitationem nisi sint excepturi? Quibusdam,
-            eligendi voluptates.
-        </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Incidunt, praesentium pariatur blanditiis eius quos velit odio quas ea sequi
-            aliquid quibusdam quasi? Perferendis corrupti illo eaque possimus, accusantium ipsam nostrum?</div>
-    </div>
+    </main>
 
     <!-- js  -->
     <script src="popup.js" defer></script>
