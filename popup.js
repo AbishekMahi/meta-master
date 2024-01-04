@@ -22,6 +22,7 @@ function displayMetaDetails(metaDetails) {
     const xPreview = document.getElementById("x-preview");
     const linkedinPreview = document.getElementById("linkedin-preview");
     const discordPreview = document.getElementById("discord-preview");
+    const analyse = document.getElementById("analyse");
 
     if (metaDetails) {
         const {
@@ -31,7 +32,34 @@ function displayMetaDetails(metaDetails) {
             image,
             favicon,
             canonicalUrl,
-            siteName
+            url,
+            siteName,
+            robots,
+            themeColor,
+            // og tags
+            ogsitename,
+            ogurl,
+            ogtitle,
+            ogimage,
+            ogdescription,
+            ogtype,
+            oglocale,
+            ogimageAlt,
+            ogimagewidth,
+            ogimageheight,
+            articlepublisher,
+            articlePublishedTime,
+            articleModifiedTime,
+            articleAuthor,
+            articleSection,
+            articleTag,
+            // twitter tags
+            twitterCard,
+            twitterSite,
+            twitterCreator,
+            twitterTitle,
+            twitterDescription,
+            twitterImage,
         } = metaDetails;
 
         // google Preview
@@ -44,7 +72,7 @@ function displayMetaDetails(metaDetails) {
             </div>
             <div class="col-11">
                 <p class="siteName">${siteName}</p>
-                <small>${canonicalUrl}</small>
+                <small>${url}</small>
             </div>
         </div>
         <h4> ${title}</h4>
@@ -93,6 +121,7 @@ function displayMetaDetails(metaDetails) {
     </div>
     <small class="bottom-small">Facebook Preview</small>
        `;
+
         //   X preview
         xPreview.innerHTML = `
         <div class="x_container">
@@ -148,6 +177,7 @@ function displayMetaDetails(metaDetails) {
        </div>
        <small class="bottom-small">Linkedin Preview</small>
        `;
+
         // discord Preview
         discordPreview.innerHTML = `
          <div class="dis-cord">
@@ -157,6 +187,195 @@ function displayMetaDetails(metaDetails) {
          </div>
         <small class="bottom-small">Discord Preview</small>
         `;
+
+        // Add the content for the "Analyze Page" tab
+        analyse.innerHTML = `
+        <form class="pl-10">
+        <p class="sm-topics">Main Meta tags</p>
+        <div class="form-group row">
+            <label for="Title" class="col-3 col-form-label">Title</label>
+            <div class="col-9">
+                <p contenteditable="true" placeholder="-- Title is missing! --" class="form-control-plaintext" id="title">${title}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="desc" class="col-3 col-form-label">Description</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder="-- Description is missing! --" id="description"  class="form-control-plaintext">${description}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Keywords</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder="-- Keywords are missing! --" class="form-control-plaintext" id="keywords">${keywords}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Canonical Url</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder="-- Canonical url is missing! --" class="form-control-plaintext" id="canonical">${canonicalUrl}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Robots</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder=" -- Robots are missing! --" class="form-control-plaintext" id="robots">${robots}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Theme Color</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder="-- Theme Color is missing! --" class="form-control-plaintext" id="themeColor">${themeColor}</p>
+            </div>
+        </div>
+
+        <!-- Open Graph / Facebook tags  -->
+
+        <p class="sm-topics">Open Graph tags</p>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">og:site_name</label>
+            <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:site_name is missing! --" class="form-control-plaintext" id="ogsitename">${ogsitename}</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Title" class="col-3 col-form-label">og:title</label>
+            <div class="col-9">
+                <p contenteditable="true" placeholder="-- og:title is missing! --" class="form-control-plaintext" id="ogtitle">${ogtitle}</p>
+            </div>
+        </div><div class="form-group row">
+        <label class="col-3 col-form-label">og:url</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:url is missing! --" class="form-control-plaintext" id="ogurl">${ogurl}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="Description" class="col-3 col-form-label">og:description</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:description is missing! --" class="form-control-plaintext" id="ogdescription">${ogdescription}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">og:type</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:type is missing! --" class="form-control-plaintext" id="ogtype">${ogtype}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">og:locale</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:locale is missing! --" class="form-control-plaintext" id="oglocale">${oglocale}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-3 col-form-label">og:image</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- og:image is missing! --" class="form-control-plaintext" id="ogimage">${ogimage}</p>
+    </div>
+</div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">og:image:alt</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- og:image:alt is missing! --" class="form-control-plaintext" id="ogimageAlt">${ogimageAlt}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-3 col-form-label">og:image:width</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- og:image:width is missing! --" class="form-control-plaintext" id="ogimagewidth">${ogimagewidth}</p>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-3 col-form-label">og:image:height</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- og:image:height is missing! --" class="form-control-plaintext" id="ogimageheight">${ogimageheight}</p>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:publisher</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:publisher is missing! --" class="form-control-plaintext" id="articlepublisher">${articlepublisher}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:published_time</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:published_time is missing! --" class="form-control-plaintext" id="articlePublishedTime">${articlePublishedTime}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:modified_time</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:modified_time is missing! --" class="form-control-plaintext" id="articleModifiedTime">${articleModifiedTime}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:author</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:author is missing! --" class="form-control-plaintext" id="articleAuthor">${articleAuthor}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:section</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:section is missing! --" class="form-control-plaintext" id="articleSection">${articleSection}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-3 col-form-label">article:tag</label>
+        <div class="col-9">
+            <p contenteditable="true" placeholder="-- article:tag is missing! --" class="form-control-plaintext" id="articleTag">${articleTag}</p>
+        </div>
+    </div>
+
+<!-- Twitter Card tags -->
+
+<p class="sm-topics">Twitter Card tags</p>
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:card</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:card is missing! --" class="form-control-plaintext" id="twittercard">${twitterCard}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:site</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:site is missing! --" class="form-control-plaintext" id="twittersite">${twitterSite}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:creator</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:creator is missing! --" class="form-control-plaintext" id="twittercreator">${twitterCreator}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:title</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:title is missing! --" class="form-control-plaintext" id="twittertitle">${twitterTitle}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:description</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:description is missing! --" class="form-control-plaintext" id="twitterdescription">${twitterDescription}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-3 col-form-label">twitter:image</label>
+    <div class="col-9">
+        <p contenteditable="true" placeholder="-- twitter:image is missing! --" class="form-control-plaintext" id="twitterimage">${twitterImage}</p>
+    </div>
+</div>
+
+        </form>
+        `;
+
     } else {
         googlePreview.innerHTML = "Unable to retrieve meta details.";
         fbPreview.innerHTML = "Unable to retrieve meta details.";

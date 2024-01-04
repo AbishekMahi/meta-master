@@ -6,12 +6,6 @@
     src: url('/fonts/GT\ America\ Regular.ttf') format('truetype');
 }
 
-::selection {
-    color: #ffffff;
-    background-color: #9b30ff;
-    text-shadow: #33322f;
-}
-
 /*******   Scrollbar   *******/
 
 ::-webkit-scrollbar {
@@ -445,4 +439,53 @@ img.linked-author {
 .dis-cord img {
     border-radius: 4px;
     width: 100%;
+}
+
+/* analyse */
+#analyse {
+    padding: 5px 15px 10px 10px !important;
+}
+
+#analyse label {
+    font-size: 80% !important;
+    color: grey;
+    padding: 3px !important;
+    word-break: break-word;
+}
+
+.sm-topics {
+    text-align: left;
+    font-weight: 500;
+    color: #6E67DF;
+    padding-left: 0 !important;
+    margin: 5px 5px 5px -10px !important;
+    width: 100%;
+}
+
+form p {
+    padding: 5px !important;
+    font-size: 85% !important;
+    color: #3a3a3a;
+}
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    pointer-events: none;
+    display: block;
+    color: #aaa;
+    /* For Firefox */
+}
+
+form p[contenteditable=true] {
+    border: 1px dashed #c1c1c1;
+    width: 100%;
+    padding: 5px;
+}
+
+.form-group.row {
+    margin-bottom: 6px !important;
+}
+
+.form-group.row .col-9 {
+    padding-left: 0 !important;
 }

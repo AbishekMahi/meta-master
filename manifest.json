@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Meta Master by Lynkify",
     "version": "1.0",
-    "description": "Instantly uncover the hidden meta data and social share previews of any website with Meta Master. Analyze keywords, social shares, Open Graph tags, and more to make informed decisions and optimize your content. Take control of your SEO and social strategy with a single click.",
+    "description": "Analyze metadata, social share previews, keywords, meta tags, and more with Meta Master. Take control of your SEO strategy.",
     "icons": {
         "128": "icon_128.png",
         "48": "icon_48.png"
@@ -16,6 +16,14 @@
     },
     "background": {
         "service_worker": "background.js"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+X"
+            },
+            "description": "View meta details"
+        }
     },
     "content_scripts": [
         {
