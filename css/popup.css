@@ -63,6 +63,71 @@ main {
     padding-top: 45px;
 }
 
+[data-title]:hover:after,
+[left-data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.2s;
+    visibility: visible;
+    text-align: center;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #3b3b3b;
+    color: #fff;
+    font-size: 90%;
+    position: absolute;
+    padding: 5px;
+    bottom: -25px;
+    width: 200px;
+    /* top: 50%; */
+    left: 105%;
+    white-space: wrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border-radius: 8px;
+    border: 1px solid #111111;
+    z-index: 99999 !important;
+    visibility: hidden;
+}
+
+[left-data-title]:after {
+    content: attr(left-data-title);
+    background-color: #3b3b3b;
+    color: #fff;
+    font-size: 80%;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -0px;
+    width: 160px;
+    /* top: 100%; */
+    right: 80%;
+    white-space: wrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border-radius: 15px 15px 15px;
+    border: 1px solid #111111;
+    z-index: 99999 !important;
+    visibility: hidden;
+}
+
+[data-title],
+[left-data-title] {
+    position: relative;
+}
+
+.nav.toptab {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: sticky;
+    top: 46px;
+    z-index: 5;
+    background-color: white;
+}
+
 .bottom-small {
     margin-top: 8px !important;
     color: #6E67DF !important;
@@ -123,36 +188,6 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-/* #meta-details h3 {
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-#meta-details h4 {
-    padding: 0;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-#meta-details p {
-    padding: 0;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-#meta-details small {
-    margin-bottom: 2px;
-    font-size: 12px;
-    color: #00952f;
-    font-weight: 500;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
 
 .favicon {
     width: 26px;
@@ -404,7 +439,6 @@ img.linked-author {
 
 /* discord */
 .dis-cord {
-    border-left: 4px solid #1e1f22;
     padding: 8px 1rem 1rem;
     cursor: pointer;
     max-width: 100%;
@@ -443,7 +477,7 @@ img.linked-author {
 
 /* analyse */
 #analyse {
-    padding: 5px 15px 10px 10px !important;
+    /* padding: 5px 15px 10px 10px !important; */
 }
 
 #analyse label {
@@ -451,6 +485,48 @@ img.linked-author {
     color: grey;
     padding: 3px !important;
     word-break: break-word;
+    cursor: pointer;
+}
+
+#analyse label:hover {
+    color: rgb(93, 93, 93);
+    text-decoration: underline;
+}
+
+#get-code-btn {
+    position: fixed;
+    z-index: 999;
+    top: 50px;
+    right: 10px;
+    padding: 5px 10px !important;
+    font-size: 90% !important;
+    box-shadow: 0 4px 8px 0 #0000001f, 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* background-color: #6E67DF; */
+    background: #ad5389;
+    background: linear-gradient(170deg, #4d36d0 0%, rgba(132, 116, 254, 1) 100%);
+}
+
+section button {
+    position: fixed;
+    z-index: 999;
+    top: 110px;
+    right: 15px;
+    padding: 5px 10px !important;
+    font-size: 90% !important;
+    color: #181818;
+    box-shadow: 0 4px 8px 0 #ffffff1f, 0 4px 20px 0 rgba(255, 255, 255, 0.19);
+    background-color: #ffffff;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
 .sm-topics {
@@ -476,6 +552,10 @@ form p {
     /* For Firefox */
 }
 
+#formss {
+    margin: 5px 15px 10px 10px !important;
+}
+
 form p[contenteditable=true] {
     border: 1px dashed #c1c1c1;
     width: 100%;
@@ -489,3 +569,20 @@ form p[contenteditable=true] {
 .form-group.row .col-9 {
     padding-left: 0 !important;
 }
+
+#gettCode {
+    width: 530px;
+    font-size: 90%;
+    margin: 10px;
+
+    /* background-color: #111827;
+    color: rgb(196, 196, 196);
+    border-radius: 10px;
+    padding: 5px 10px 10px 10px !important; */
+}
+
+/* code {
+    font-family: Consolas, "courier new", monospace;
+    font-size: 14px;
+    white-space: unset;
+} */
