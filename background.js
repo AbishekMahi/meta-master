@@ -11,7 +11,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 chrome.commands.onCommand.addListener(function (command) {
     if (command === "_execute_action") {
-        // Perform the action to display meta details
         // (e.g., open the popup window or trigger the relevant functionality)
         chrome.tabs.query({
             active: true,
