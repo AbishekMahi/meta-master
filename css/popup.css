@@ -53,6 +53,11 @@ header h2 {
     text-align: center;
 }
 
+.heading {
+    color: #fff !important;
+    text-decoration: none;
+}
+
 header h2 small {
     margin: 0;
     font-weight: 400;

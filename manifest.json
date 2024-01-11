@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Meta Master by Lynkify",
-    "version": "1.0",
+    "version": "1.1.0",
     "description": "Analyze metadata, social share previews, keywords, meta tags, and more with Meta Master. Take control of your SEO strategy.",
     "icons": {
         "128": "icon_128.png",

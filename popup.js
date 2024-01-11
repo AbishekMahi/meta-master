@@ -324,6 +324,7 @@ function displayMetaDetails(metaDetails) {
                 <pre class="m-0 language-html"><code class="language-markup">&lt;!-- Paste inside head tag--&gt;
 &lt;meta charset='utf-8'&gt;
 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;
 
 &lt;!-- Main tags--&gt;
 &lt;title&gt;${title || ogtitle || twitterTitle}&lt;/title&gt;
